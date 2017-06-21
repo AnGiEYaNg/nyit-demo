@@ -1,0 +1,31 @@
+.main-container {
+	max-width: 1024px;
+	margin: auto;
+	padding: 30px 62px;
+	color: #4A4A4A;
+}
+
+#header {
+	font-size: 20px;
+}
+.logo {
+	margin-right: 16px;
+}
+
+.logo-text {
+	font-style: italic;
+	padding-top: 25px;
+}
+.logo-desc-block {
+	border-left: 1px solid #979797;
+	padding-left: 16px;
+}
+.logo-link-block {
+	font-size: 14px;
+	margin-top: 12px;
+}
+
+.logo-link {
+	color: inherit;
+	text-decoration: underline;
+}
