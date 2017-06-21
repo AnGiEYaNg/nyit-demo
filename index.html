@@ -30,7 +30,75 @@
 	<script src="src/js/app.js"></script>
 	<script src="src/js/routes.js"></script>
 	<script type="text/ng-template" id="homepage.html">
-        <h1>Content</h1>
+        <video controls class="homepage__video">
+          <source src="assets/NYIT_COMPOSITE withLogo.mov">
+          Your browser does not have support for this video.
+        </video>
+        <div class="homepage__block">
+        	<div class="homepage__actions" ui-sref="bachelorsLanding">
+        		<div>Bachelors of </div>
+        		<div>Fine Art</div>
+			</div>
+        	<div class="homepage__actions" ui-sref="mastersLanding">
+        		<div>Masters of </div>
+				<div>Fine Art</div>
+			</div>
+        </div>
+        <div class="text-center">
+        	© New York Institute of Technology 2017
+        </div>
+    </script>
+
+    <script type="text/ng-template" id="landingTitle.html">
+    	<div class="row landingTitle__block">
+    		<div class="col-sm-6 col-xs-12 landingTitle__content">
+				<h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+				<h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h5>
+			</div>
+		</div>
+    </script>
+
+    <script type="text/ng-template" id="mastersLanding.html">
+    	<div class="nav">
+    		<span ui-sref="home" class="nav__link">Home</span>
+    		<span> / </span>
+    		<span>Masters of Fine Art</span>
+    	</div>
+    	<div ng-include="'landingTitle.html'"></div>
+    	<div class="row">
+    		<div class="col-md-4 col-sm-6 col-xs-12 masters__action" ui-sref="subsection({subsection: 'animation'})">
+    			<img src="" class="masters__img" />
+    			<div class="masters__actionTitle">Animation</div>
+    		</div>
+    		<div class="col-md-4 col-sm-6 col-xs-12 masters__action" ui-sref="subsection({subsection: 'art_and_technology'})">
+    			<img src="" class="masters__img" />
+    			<div class="masters__actionTitle">Art & Technology</div>
+    		</div>
+    		<div class="col-md-4 col-sm-6 col-xs-12 masters__action" ui-sref="subsection({subsection: 'graphic_design'})">
+    			<img src="" class="masters__img" />
+    			<div class="masters__actionTitle">Graphic Design</div>
+    		</div>
+    	</div>
+    </script>
+
+    <script type="text/ng-template" id="bachelorsLanding.html">
+	    <div class="nav">
+    		<span ui-sref="home" class="nav__link">Home</span>
+    		<span> / </span>
+    		<span>Bachelors of Fine Art</span>
+    	</div>
+    	<div ng-include="'landingTitle.html'"></div>
+    	<div class="clearfix">
+			<img ng-repeat="img in images" src="{{img}}" class="demo_img" />
+    	</div>
+    </script>
+
+    <script type="text/ng-template" id="subsection.html">
+    	<h1>subsection</h1>
+    </script>
+
+    <script type="text/ng-template" id="credits.html">
+    	<div ui-sref="home" class="credit_return">Return Home</div>
     </script>
 	</body>
 </html>
