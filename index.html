@@ -79,6 +79,7 @@
     			<div class="masters__actionTitle">Graphic Design</div>
     		</div>
     	</div>
+    	<div  ui-sref="credits" class="nav__link pull-right credits__footer">Credits</div>
     </script>
 
     <script type="text/ng-template" id="bachelorsLanding.html">
@@ -94,11 +95,29 @@
     </script>
 
     <script type="text/ng-template" id="subsection.html">
-    	<h1>subsection</h1>
+	    <div class="nav">
+    		<span ui-sref="home" class="nav__link">Home</span>
+    		<span> / </span>
+    		<span ui-sref="mastersLanding" class="nav__link">Masters of Fine Art</span>
+    		<span> / </span>
+    		<span>Subsection</span>
+    	</div>
+    	<div class="clearfix">
+			<img ng-repeat="img in images" src="{{img}}" class="demo_img" />
+    	</div>
     </script>
 
     <script type="text/ng-template" id="credits.html">
-    	<div ui-sref="home" class="credit_return">Return Home</div>
+    	<div ui-sref="home" class="credits__return">Return Home</div>
+    	<div class="row">
+    		<div class="col-xs-4 text-right">
+	    		<div class="credits__title">MFA Student</div>
+				 <div class="credits__title">Work created by</div>
+    		</div>
+    		<div class="col-xs-8">
+    			<div class="col-xs-6 credits__name" ng-repeat="credit in credits">{{credit}}</div>
+    		</div>
+    	</div>
     </script>
 	</body>
 </html>

@@ -76,11 +76,11 @@ h3 {
 	text-decoration: underline;
 }
 .demo_img {
-	object-fit: cover;
 	width: 280px;
 	height: 280px;
 	float: left;
 	margin: 0 20px 20px 0;
+	object-fit: cover;
 }
 .masters__action {
 	width: 280px;
@@ -96,7 +96,20 @@ h3 {
 	border: 1px solid #E9E9E9;
 	padding: 28px;
 }
-.credit_return {
+.credits__footer {
+	margin: 100px 0 44px 0;
+}
+.credits__return {
 	text-decoration: underline;
 	font-size: 12px;
+	margin-bottom: 123px;
+}
+.credits__title {
+	font-size: 25px;
+	font-style: italic;
+	padding-right: 70px;
+	line-height: 15px;
+}
+.credits__name {
+	font-size: 18px;
 }
