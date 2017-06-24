@@ -50,7 +50,6 @@ angular.module('main', ['ui.router', 'ngAnimate'])
 		self.openModal = function(index){
 			self.showModal = true;
 			self.currentDemoIndex = index;
-			console.log('hit open modal', self.images[self.currentDemoIndex]);
 		}
 		self.closeModal = function(){
 			self.showModal = false;

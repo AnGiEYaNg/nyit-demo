@@ -129,8 +129,10 @@
     	<div class="mainModal" ng-if="$ctrl.showModal">
 		    <div class="mainModal_content text-center">
 		    	<!-- <div class="pull-right closeIcon clearfix">x</div> -->
-		    	<div><span class="glyphicon glyphicon glyphicon-remove-sign pull-right mainModal_close" ng-click="$ctrl.closeModal()" aria-hidden="true"></span></div>
-	    		<img src="{{$ctrl.images[$ctrl.currentDemoIndex]}}" class="mainModal_img"/>
+		    		<div class="clearfix">
+			    		<span class="glyphicon glyphicon glyphicon-remove-sign pull-right mainModal_close" ng-click="$ctrl.closeModal()" aria-hidden="true"></span>
+		    		</div>
+		    		<img src="{{$ctrl.images[$ctrl.currentDemoIndex]}}" class="mainModal_img"/>
 	    	</div>
 	    	<!-- <div class="mainModal_backdrop" ng-click="$ctrl.closeModal()"></div> -->
     	</div>

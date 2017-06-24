@@ -104,6 +104,7 @@ h3 {
 	text-decoration: underline;
 	font-size: 12px;
 	margin-bottom: 123px;
+	cursor: pointer;
 }
 .credits__title {
 	font-size: 25px;
@@ -126,7 +127,19 @@ h3 {
 	height: 100%;
 	z-index: 1;
 	background-color: #000;
+	color: #FFF;
+	transition: ;
+	transition: background-color 0.1s ease-in-out;
 }
+
+.mainModal.ng-enter {
+  background-color: rgba(0,0,0,0);
+}
+
+.mainModal.ng-enter-active {
+  background-color: rgba(0,0,0,1);
+}
+
 .mainModal_backdrop {
 	position: absolute;
 	background-color: #000;
@@ -135,18 +148,29 @@ h3 {
 	z-index: 2;
 }
 .mainModal_content {
-	max-width: 80%;
-	max-height: 70%;
-	color: #FFF;
+	max-width: 80vw;
+	max-height: 70vh;
 	z-index: 3;
+	transition: transform 0.3s ease-in-out 0.2s;
 }
+
+.mainModal.ng-enter .mainModal_content {
+	transform: scale3d(0,0,0);
+}
+.mainModal.ng-enter-active .mainModal_content {
+	transform: scale3d(1,1,1);
+}
+
 .mainModal_close {
 	cursor: pointer;
 	position: relative;
+	top: 0;
 	right: -22px;
 }
 .mainModal_img {
-	/*margin: 5px 20px;*/
+	max-width: 80vw;
+	max-height: 70vh;
+
 }
 .closeIcon {
 	width: 20px;
@@ -161,8 +185,4 @@ h3 {
 	color: #000;
 	font-size: 20px;
 }
-/*.modal_img {
-	max-width: 80%;
-	max-height: 70%;
-}*/
 
