@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
-		<link rel="stylesheet" href="lib/bootstrap/css/bootstrap-theme.min.css">
-		<link rel="stylesheet" href="src/main.css">
+		<link rel="stylesheet" href=".lib/bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href=".lib/bootstrap/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href=".src/main.css">
 	</head>
 	<body ng-app="main" class="main-container">
 		<section id="header" class="row clearfix">
-			<img ng-src="assets/NYiT-Logo.png" class="pull-left logo"/>
+			<img ng-src=".assets/NYiT-Logo.png" class="pull-left logo"/>
 			<div class="pull-left logo-text"> 
 				<div>Department of</div> 
 				<div>Digital Art and Design</div>
@@ -22,16 +22,16 @@
 		</section>
 		<ui-view></ui-view>
 
-	<script src="lib/jquery.min.js"></script>
-	<script src="lib/angular.min.js"></script>
-	<script src="lib/angular-animate.min.js"></script>
-	<script src="lib/angular-ui-router.min.js"></script>
-	<script src="lib/bootstrap/js/bootstrap.min.js"></script>
-	<script src="src/js/app.js"></script>
-	<script src="src/js/routes.js"></script>
+	<script src=".lib/jquery.min.js"></script>
+	<script src=".lib/angular.min.js"></script>
+	<script src=".lib/angular-animate.min.js"></script>
+	<script src=".lib/angular-ui-router.min.js"></script>
+	<script src=".lib/bootstrap/js/bootstrap.min.js"></script>
+	<script src=".src/js/app.js"></script>
+	<script src=".src/js/routes.js"></script>
 	<script type="text/ng-template" id="homepage.html">
         <video controls class="homepage_video">
-          <source src="assets/NYIT_COMPOSITE withLogo.mov">
+          <source ng-src=".assets/NYIT_COMPOSITE withLogo.mov">
           Your browser does not have support for this video.
         </video>
         <div class="homepage_block">
@@ -134,7 +134,7 @@
     <script type="text/ng-template" id="video_demo.html">
     	<div class="row">
     		<video class="demo_video col-sm-6 col-xs-12" ng-click="$ctrl.openModal($index)" ng-repeat="video in $ctrl.datas track by $index" >
-	    		  <source src="{{video}}">
+	    		  <source ng-src="{{video}}">
 	    		  Your browser does not have support for this video.
     		</video>
     	</div>
@@ -145,7 +145,7 @@
 			    		<span class="glyphicon glyphicon glyphicon-remove-sign pull-right mainModal_close" ng-click="$ctrl.closeModal()" aria-hidden="true"></span>
 		    		</div>
 		    		<video controls class="mainModal_img">
-			    		  <source src="{{$ctrl.datas[$ctrl.currentDemoIndex]}}">
+			    		  <source ng-src="{{$ctrl.datas[$ctrl.currentDemoIndex]}}">
 			    		  Your browser does not have support for this video.
 		    		</video>
 	    	</div>
