@@ -6,27 +6,18 @@ angular.module('main')
 		url: '',
 		templateUrl: 'homepage.html',
 		controller: 'imagesCtrl',
-		data: {
-			breadcrumb: 'Home'
-		}
 	})
 	.state({
 		name: 'mastersLanding',
 		url: '/masters_of_fine_art',
 		templateUrl: 'mastersLanding.html',
 		controller: 'imagesCtrl',
-		data: {
-			breadcrumb: 'Masters of Fine Art'
-		}
 	})
 	.state({
 		name: 'bachelorsLanding',
 		url: '/bachelors_of_fine_art',
 		templateUrl: 'bachelorsLanding.html',
 		controller: 'imagesCtrl',
-		data: {
-			breadcrumb: 'Bachelors of Fine Art'
-		}
 	})
 	.state({
 		name: 'subsection',
