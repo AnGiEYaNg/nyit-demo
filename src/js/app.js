@@ -1,4 +1,4 @@
-angular.module('main', ['ui.router', 'ngAnimate'])
+angular.module('main', ['ui.router', 'ngAnimate', 'ncy-angular-breadcrumb'])
 .factory('assetsFactory', function(){
 	return {
 		subSectionMap : {
@@ -146,7 +146,31 @@ angular.module('main', ['ui.router', 'ngAnimate'])
 
 	}
 })
-.controller('imagesCtrl', function($anchorScroll, $scope, $timeout, assetsFactory, $stateParams){
+.controller('mainCtrl', function($anchorScroll, $scope, $timeout, assetsFactory, $stateParams){
+	$scope.srcPrefix = 'src/';
+	$scope.libPrefix = 'lib/';
+	$scope.assetsPrefix = 'assets/';
+
+	$scope.section = {
+		BFA: {
+			title: 'Bachelors of Fine Art',
+			subSectionImg : {
+				animation: 'Animation',
+				art_and_technology: 'Art & Technology',
+				graphic_design: 'Graphic Design' 
+			},
+
+		},
+		MFA: {
+			title: 'Masters of Fine Art',
+			subSectionImg : {
+				animation: 'Animation',
+				art_and_technology: 'Art & Technology',
+				graphic_design: 'Graphic Design' 
+			},
+		}
+	}
+
 	$scope.credits = assetsFactory.credits;
 	$scope.subSectionMap=assetsFactory.subSectionMap;
 	$scope.subSectionImg={
@@ -155,6 +179,7 @@ angular.module('main', ['ui.router', 'ngAnimate'])
 		graphic_design: "assets/MFA - Graphic Design/Copy of jingzou COLLINS.jpg"
 	};
 	$scope.bachelors_of_fine_art = assetsFactory.bachelors_of_fine_art;
+	$scope.stateParams = $stateParams;
 	$scope.currentSection = $stateParams.subsection;
 	$scope.subsectionData = assetsFactory[$scope.currentSection];
 	$timeout(function(){
@@ -228,4 +253,4 @@ angular.module('main', ['ui.router', 'ngAnimate'])
         jQuery(element).fadeOut(200, doneFn);
     }
   }
-});;
+});

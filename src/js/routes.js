@@ -5,30 +5,39 @@ angular.module('main')
 		name: 'home',
 		url: '',
 		templateUrl: 'homepage.html',
-		controller: 'imagesCtrl',
+		controller: 'mainCtrl',
+		ncyBreadcrumb: {
+			label: 'Home'
+		}
 	})
 	.state({
-		name: 'mastersLanding',
-		url: '/masters_of_fine_art',
+		name: 'section',
+		url: '/:section',
 		templateUrl: 'mastersLanding.html',
-		controller: 'imagesCtrl',
+		controller: 'mainCtrl',
+		ncyBreadcrumb: {
+			label: '{{section[stateParams.section].title}}'
+		}
 	})
 	.state({
-		name: 'bachelorsLanding',
-		url: '/bachelors_of_fine_art',
-		templateUrl: 'bachelorsLanding.html',
-		controller: 'imagesCtrl',
-	})
-	.state({
-		name: 'subsection',
+		name: 'section.subsection',
 		url: '/:subsection',
 		templateUrl: 'subsection.html',
-		controller: 'imagesCtrl',
+		controller: 'mainCtrl',
+		ncyBreadcrumb: {
+			label: '{{stateParams.subsection}}'
+		}
+	})
+	.state({
+		name: 'section.subsection.type',
+		url: '/:type',
+		templateUrl: 'subsection.html',
+		controller: 'mainCtrl'
 	})
 	.state({
 		name: 'credits',
 		url: '/credits',
 		templateUrl: 'credits.html',
-		controller: 'imagesCtrl',
+		controller: 'mainCtrl'
 	})
 })

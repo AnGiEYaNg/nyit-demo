@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<link rel="stylesheet" href=".lib/bootstrap/css/bootstrap.min.css">
-		<link rel="stylesheet" href=".lib/bootstrap/css/bootstrap-theme.min.css">
-		<link rel="stylesheet" href=".src/main.css">
+		<link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="lib/bootstrap/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="src/main.css">
 	</head>
-	<body ng-app="main" class="main-container">
+	<body ng-app="main" class="main-container" ng-controller="mainCtrl">
 		<section id="header" class="row clearfix">
-			<img ng-src=".assets/NYiT-Logo.png" class="pull-left logo"/>
+			<img ng-src="{{assetsPrefix}}NYiT-Logo.png" class="pull-left logo" ui-sref="home"/>
 			<div class="pull-left logo-text"> 
 				<div>Department of</div> 
 				<div>Digital Art and Design</div>
@@ -20,29 +20,27 @@
 				</div>
 			</div>
 		</section>
-		<ui-view></ui-view>
+<!--         <section>
+            <div ncy-breadcrumb></div>
+        </section>
+ -->		<ui-view></ui-view>
 
-	<script src=".lib/jquery.min.js"></script>
-	<script src=".lib/angular.min.js"></script>
-	<script src=".lib/angular-animate.min.js"></script>
-	<script src=".lib/angular-ui-router.min.js"></script>
-	<script src=".lib/bootstrap/js/bootstrap.min.js"></script>
-	<script src=".src/js/app.js"></script>
-	<script src=".src/js/routes.js"></script>
+	<script src="lib/jquery.min.js"></script>
+	<script src="lib/angular.min.js"></script>
+	<script src="lib/angular-animate.min.js"></script>
+	<script src="lib/angular-ui-router.min.js"></script>
+	<script src="lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="lib/angular-breadcrumb.min.js"></script>
+	<script src="src/js/app.js"></script>
+	<script src="src/js/routes.js"></script>
 	<script type="text/ng-template" id="homepage.html">
         <video controls class="homepage_video">
-          <source ng-src=".assets/NYIT_COMPOSITE withLogo.mov">
+          <source ng-src="{{assetsPrefix}}NYIT-Demo-Reel.mp4">
           Your browser does not have support for this video.
         </video>
         <div class="homepage_block">
-        	<div class="homepage_actions" ui-sref="bachelorsLanding">
-        		<div>Bachelors of </div>
-        		<div>Fine Art</div>
-			</div>
-        	<div class="homepage_actions" ui-sref="mastersLanding">
-        		<div>Masters of </div>
-				<div>Fine Art</div>
-			</div>
+        	<img class="homepage_actions" ui-sref="section({section: 'BFA'})" ng-src="{{assetsPrefix}}Landing-BFA-v1.png" />
+        	<img class="homepage_actions" ui-sref="section({section: 'MFA'})" ng-src="{{assetsPrefix}}Landing-MFA-v1.png" />
         </div>
         <div class="text-center">
         	© New York Institute of Technology 2017
@@ -74,7 +72,7 @@
     	<div  ui-sref="credits" class="nav_link pull-right credits_footer">Credits</div>
     </script>
 
-    <script type="text/ng-template" id="bachelorsLanding.html">
+<!--     <script type="text/ng-template" id="bachelorsLanding.html">
 	    <div class="nav">
     		<span ui-sref="home" class="nav_link">Home</span>
     		<span> / </span>
@@ -82,7 +80,7 @@
     	</div>
     	<div ng-include="'landingTitle.html'"></div>
     	<work-demo datas="bachelors_of_fine_art"></work-demo>
-    </script>
+    </script> -->
 
     <script type="text/ng-template" id="subsection.html">
 	    <div class="nav">
@@ -140,16 +138,14 @@
     	</div>
     	<div class="mainModal" ng-if="$ctrl.showModal">
 		    <div class="mainModal_content text-center">
-		    	<!-- <div class="pull-right closeIcon clearfix">x</div> -->
-		    		<div class="clearfix">
-			    		<span class="glyphicon glyphicon glyphicon-remove-sign pull-right mainModal_close" ng-click="$ctrl.closeModal()" aria-hidden="true"></span>
-		    		</div>
-		    		<video controls class="mainModal_img">
-			    		  <source ng-src="{{$ctrl.datas[$ctrl.currentDemoIndex]}}">
-			    		  Your browser does not have support for this video.
-		    		</video>
+	    		<div class="clearfix">
+		    		<span class="glyphicon glyphicon glyphicon-remove-sign pull-right mainModal_close" ng-click="$ctrl.closeModal()" aria-hidden="true"></span>
+	    		</div>
+	    		<video controls class="mainModal_img">
+		    		  <source ng-src="{{$ctrl.datas[$ctrl.currentDemoIndex]}}">
+		    		  Your browser does not have support for this video.
+	    		</video>
 	    	</div>
-	    	<!-- <div class="mainModal_backdrop" ng-click="$ctrl.closeModal()"></div> -->
     	</div>
     </script>
 
