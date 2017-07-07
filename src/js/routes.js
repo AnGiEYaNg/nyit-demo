@@ -1,5 +1,9 @@
 angular.module('main')
-.config(function($stateProvider){
+.config(function($breadcrumbProvider, $stateProvider){
+	$breadcrumbProvider.setOptions({
+      prefixStateName: 'home'
+    });
+
 	$stateProvider
 	.state({
 		name: 'home',
@@ -14,33 +18,31 @@ angular.module('main')
 		name: 'credits',
 		url: '/credits',
 		templateUrl: 'credits.html',
-		controller: 'mainCtrl'
+		controller: 'mainCtrl',
+		ncyBreadcrumb: {
+			label: 'Credits'
+		}
 	})
 	.state({
-		name: 'content',
-		templateUrl: 'breadcrumb.html',
-		controller: 'mainCtrl'
-	})
-	.state({
-		name: 'content.section',
+		name: 'section',
 		url: '/:section',
 		templateUrl: 'section.html',
 		controller: 'mainCtrl',
 		ncyBreadcrumb: {
-			label: '{{section[stateParams.section].title}}'
+			label: '{{sectionMap[stateParams.section].title}}'
 		}
 	})
 	.state({
-		name: 'content.section.subsection',
+		name: 'section.subsection',
 		url: '/:subsection',
 		templateUrl: 'subsection.html',
 		controller: 'mainCtrl',
 		ncyBreadcrumb: {
-			label: '{{stateParams.subsection}}'
+			label: '{{subsectionMap[stateParams.subsection]}}'
 		}
 	})
 	.state({
-		name: 'content.section.subsection.type',
+		name: 'section.subsection.type',
 		url: '/:type',
 		templateUrl: 'subsection.html',
 		controller: 'mainCtrl'

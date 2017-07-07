@@ -20,10 +20,8 @@
 				</div>
 			</div>
 		</section>
-<!--         <section>
-            <div ncy-breadcrumb></div>
-        </section>
- -->		<ui-view></ui-view>
+        <div ncy-breadcrumb ng-hide="currentState.name === 'home'"></div>
+		<ui-view></ui-view>
 
 	<script src="lib/jquery.min.js"></script>
 	<script src="lib/angular.min.js"></script>
@@ -33,6 +31,7 @@
     <script src="lib/angular-breadcrumb.min.js"></script>
 	<script src="src/js/app.js"></script>
 	<script src="src/js/routes.js"></script>
+    <script src="src/js/assetsFactory.js"></script>
 
 	<script type="text/ng-template" id="homepage.html">
         <video controls class="homepage_video">
@@ -40,8 +39,8 @@
           Your browser does not have support for this video.
         </video>
         <div class="homepage_block">
-        	<img class="homepage_actions" ui-sref="content.section({section: 'BFA'})" ng-src="{{assetsPrefix}}Landing-BFA-v1.png" />
-        	<img class="homepage_actions" ui-sref="content.section({section: 'MFA'})" ng-src="{{assetsPrefix}}Landing-MFA-v1.png" />
+        	<img class="homepage_actions" ui-sref="section({section: 'BFA'})" ng-src="{{assetsPrefix}}Landing-BFA-v1.png" />
+        	<img class="homepage_actions" ui-sref="section({section: 'MFA'})" ng-src="{{assetsPrefix}}Landing-MFA-v1.png" />
         </div>
         <div class="text-center">
         	© New York Institute of Technology 2017
@@ -49,12 +48,7 @@
     </script>
 
     <script type="text/ng-template" id="credits.html">
-        <div class="credits_return">
-            <span ui-sref="home" class="nav_link">Home</span>
-            <span> / </span>
-            <span ui-sref="credits" ui-sref-active="nav_link_active">Credits</span>
-        </div>
-        <div class="row">
+        <div class="row credits">
             <div class="col-xs-4 text-right">
                 <div class="credits_title">MFA Student</div>
                  <div class="credits_title">Work created by</div>
@@ -65,37 +59,26 @@
         </div>
     </script>   
 
-    <script type="text/ng-template" id="breadcrumb.html">
-        <div class="nav">
-            <span ui-sref="home" class="nav_link">Home</span>
-            <span> / </span>
-            <span ui-sref="content.section({section:stateParams.section})" ui-sref-active="nav_link_active">{{section[stateParams.section].title}}</span>
-            <span ng-if="stateParams.subsection"> / </span>
-            <span ui-sref="content.section.subsection({section:stateParams.section, subsection: stateParams.subsection})" ui-sref-active="nav_link_active">{{subSectionMap[stateParams.subsection]}}</span>
-        </div>
-        <ui-view></ui-view>
-    </script>
-
     <script type="text/ng-template" id="section.html">
     	
        <div class="row landingTitle_block">
-            <div class="col-sm-6 col-xs-12 landingTitle_content">
-                <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
-                <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h5>
+            <div class="landingTitle_content">
+                <h3>{{sectionMap[stateParams.section].h3}}</h3>
+                <h5>{{sectionMap[stateParams.section].h5}}</h5>
             </div>
         </div>
     	<div class="row">
-    		<div ng-repeat="(state, name) in subSectionMap" class="col-md-4 col-sm-6 col-xs-12 masters_action" ui-sref=".subsection({subsection: state})">
-    			<img ng-src="{{subSectionImg[state]}}" class="masters_img" />
+    		<div ng-repeat="(state, name) in subsectionMap" class="col-md-4 col-sm-6 col-xs-12 masters_action" ui-sref="section.subsection({section: stateParams.section, subsection: state})">
+    			<img ng-src="{{sectionPrefix+sectionMap[stateParams.section][state]}}" class="masters_img" />
     			<div class="masters_actionTitle">{{name}}</div>
     		</div>
     	</div>
-    	<div  ui-sref="credits" class="nav_link pull-right credits_footer">Credits</div>
+    	<div  ui-sref="credits" class="nav_link pull-right credits_footer" ng-if="stateParams.section === 'MFA'">Credits</div>
     </script>
 
     <script type="text/ng-template" id="subsection.html">
-		<work-demo ng-if="currentSection !== 'animation'" datas="subsectionData"></work-demo>
-		<video-demo ng-if="currentSection === 'animation'" datas="subsectionData"></video-demo>
+		<work-demo datas="subsectionData"></work-demo>
+		<!-- <video-demo ng-if="currentSection === 'animation'" datas="subsectionData"></video-demo> -->
     </script>
 
 
