@@ -8,8 +8,12 @@ angular.module('main')
 	.state({
 		name: 'home',
 		url: '',
-		templateUrl: 'homepage.html',
-		controller: 'mainCtrl',
+		views: {
+			'main@':{
+				templateUrl: 'homepage.html',
+				controller: 'mainCtrl',
+			}
+		},
 		ncyBreadcrumb: {
 			label: 'Home'
 		}
@@ -17,8 +21,12 @@ angular.module('main')
 	.state({
 		name: 'credits',
 		url: '/credits',
-		templateUrl: 'credits.html',
-		controller: 'mainCtrl',
+		views: {
+			'main@':{
+				templateUrl: 'credits.html',
+				controller: 'mainCtrl',
+			}
+		},
 		ncyBreadcrumb: {
 			label: 'Credits'
 		}
@@ -26,8 +34,12 @@ angular.module('main')
 	.state({
 		name: 'section',
 		url: '/:section',
-		templateUrl: 'section.html',
-		controller: 'mainCtrl',
+		views: {
+			'main@':{
+				templateUrl: 'section.html',
+				controller: 'mainCtrl',
+			}
+		},
 		ncyBreadcrumb: {
 			label: '{{sectionMap[stateParams.section].title}}'
 		}
@@ -35,8 +47,12 @@ angular.module('main')
 	.state({
 		name: 'section.subsection',
 		url: '/:subsection',
-		templateUrl: 'subsection.html',
-		controller: 'mainCtrl',
+		views: {
+			'main@':{
+				templateUrl: 'subsection.html',
+				controller: 'mainCtrl',
+			}
+		},
 		ncyBreadcrumb: {
 			label: '{{subsectionMap[stateParams.subsection]}}'
 		}
@@ -44,7 +60,11 @@ angular.module('main')
 	.state({
 		name: 'section.subsection.type',
 		url: '/:type',
-		templateUrl: 'subsection.html',
-		controller: 'mainCtrl'
+		views: {
+			'main@':{
+				templateUrl: 'subsection.html',
+				controller: 'mainCtrl'
+			}
+		},
 	})
 })

@@ -1,5 +1,5 @@
 angular.module('main', ['ui.router', 'ngAnimate', 'ncy-angular-breadcrumb'])
-.controller('mainCtrl', function($anchorScroll, $scope, $timeout, assetsFactory, $state, $stateParams){
+.controller('mainCtrl', function($anchorScroll, $rootScope, $scope, $timeout, assetsFactory, $state, $stateParams){
 	$timeout(function(){
 		$anchorScroll();
 	});
@@ -10,12 +10,13 @@ angular.module('main', ['ui.router', 'ngAnimate', 'ncy-angular-breadcrumb'])
 
 	$scope.srcPrefix = 'src/';
 	$scope.libPrefix = 'lib/';
-	$scope.assetsPrefix = 'assets/';
+	$rootScope.assetsPrefix = 'assets/';
+	$scope.assetsPrefix = $rootScope.assetsPrefix;
 	$scope.sectionPrefix = $scope.assetsPrefix + $stateParams.section+'/';
-	$scope.subsectionPrefix = $scope.sectionPrefix + $scope.subsectionMap[$stateParams.subsection];
+	$scope.subsectionPrefix = $scope.sectionPrefix + $scope.subsectionMap[$stateParams.subsection]+'/';
 	$scope.credits = assetsFactory.credits;
 
-	$scope.assetsData = {
+	$scope.assetsDataMap = {
 		BFA: {
 			animation: assetsFactory.BFA_animation,
 			art_and_technology: assetsFactory.BFA_art_and_technology,
@@ -37,38 +38,32 @@ angular.module('main', ['ui.router', 'ngAnimate', 'ncy-angular-breadcrumb'])
 		}
 	}
 
-})
-.controller('modalCtrl', function(){
-	var self = this;
-	self.showModal = false;
-	self.currentDemoIndex = null;
-	self.openModal = function(index){
-		self.showModal = true;
-		self.currentDemoIndex = index;
+	$scope.assetsData = assetsFactory[$stateParams.section+'_'+$stateParams.subsection];
+	console.log('assetsData', $scope.assetsData, $stateParams.section+'_'+$stateParams.subsection);
+
+	$scope.showModal = false;
+	$scope.currentDemoData = null;
+	$scope.openModal = function(data){
+		$scope.showModal = true;
+		$scope.currentDemoData = data;
 	}
 
-	self.isArray = function(arr){
+	$scope.isArray = function(arr){
 		return Array.isArray(arr);
 	}
-	self.closeModal = function(){
-		self.showModal = false;
-		self.currentDemoIndex = null;
+	$scope.closeModal = function(){
+		$scope.showModal = false;
+		$scope.currentDemoData = null;
 	}
+
 })
-.component('workDemo', {
-	templateUrl: 'work_demo.html',
-	bindings: {
-		datas: '='
-	},
-	controller: 'modalCtrl'
-})
-.component('videoDemo', {
-	templateUrl: 'video_demo.html',
-	bindings: {
-		datas: '='
-	},
-	controller: 'modalCtrl'
-})
+// .component('videoDemo', {
+// 	templateUrl: 'video_demo.html',
+// 	bindings: {
+// 		datas: '='
+// 	},
+// 	controller: 'modalCtrl'
+// })
 .component('lightbox', {
 	templateUrl: 'lightbox.html',
 	bindings: {

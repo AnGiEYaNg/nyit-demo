@@ -21,7 +21,7 @@
 			</div>
 		</section>
         <div ncy-breadcrumb ng-hide="currentState.name === 'home'"></div>
-		<ui-view></ui-view>
+		<div ui-view="main"></div>
 
 	<script src="lib/jquery.min.js"></script>
 	<script src="lib/angular.min.js"></script>
@@ -77,50 +77,29 @@
     </script>
 
     <script type="text/ng-template" id="subsection.html">
-		<work-demo datas="subsectionData"></work-demo>
-		<!-- <video-demo ng-if="currentSection === 'animation'" datas="subsectionData"></video-demo> -->
-    </script>
-
-
-
-    <script type="text/ng-template" id="work_demo.html">
     	<div class="clearfix">
 			<img 
-			ng-repeat="img in $ctrl.datas track by $index" 
-			ng-src="{{$ctrl.isArray(img)?img[0]:img}}" 
+			ng-repeat="img in assetsData track by $index" 
+			ng-src="{{subsectionPrefix+img.thumbnail}}" 
 			class="demo_img" 
-			ng-click="$ctrl.openModal($index)"/>
+			ng-click="openModal(img.full)"/>
     	</div>
-    	<div class="mainModal" ng-if="$ctrl.showModal">
+    	<div class="mainModal" ng-if="showModal">
 		    <div class="mainModal_content text-center">
 		    	<!-- <div class="pull-right closeIcon clearfix">x</div> -->
 		    		<div class="clearfix">
-			    		<span class="glyphicon glyphicon glyphicon-remove-sign pull-right mainModal_close" ng-click="$ctrl.closeModal()" aria-hidden="true"></span>
+			    		<span class="glyphicon glyphicon glyphicon-remove-sign pull-right mainModal_close" ng-click="closeModal()" aria-hidden="true"></span>
 		    		</div>
-		    		<img ng-if="!$ctrl.isArray($ctrl.datas[$ctrl.currentDemoIndex])" ng-src="{{$ctrl.datas[$ctrl.currentDemoIndex]}}" class="mainModal_img"/>
-		    		<lightbox ng-if="$ctrl.isArray($ctrl.datas[$ctrl.currentDemoIndex])" inner-datas="$ctrl.datas[$ctrl.currentDemoIndex]"></lightbox>
+                    <div ng-if="!isArray(currentDemoData)">
+    		    		<img ng-src="{{subsectionPrefix+currentDemoData}}" ng-if="currentDemoData.slice(-3).toLowerCase() !== 'mp4'" class="mainModal_img"/>
+                        <video ng-if="currentDemoData.slice(-3).toLowerCase() === 'mp4'" controls autoplay class="mainModal_img">
+                              <source ng-src="{{subsectionPrefix+currentDemoData}}">
+                              Your browser does not have support for this video.
+                        </video>
+                    </div>
+		    		<lightbox ng-if="isArray(currentDemoData)" inner-datas="currentDemoData"></lightbox>
 	    	</div>
 	    	<!-- <div class="mainModal_backdrop" ng-click="$ctrl.closeModal()"></div> -->
-    	</div>
-    </script>
-
-    <script type="text/ng-template" id="video_demo.html">
-    	<div class="row">
-    		<video class="demo_video col-sm-6 col-xs-12" ng-click="$ctrl.openModal($index)" ng-repeat="video in $ctrl.datas track by $index" >
-	    		  <source ng-src="{{video}}">
-	    		  Your browser does not have support for this video.
-    		</video>
-    	</div>
-    	<div class="mainModal" ng-if="$ctrl.showModal">
-		    <div class="mainModal_content text-center">
-	    		<div class="clearfix">
-		    		<span class="glyphicon glyphicon glyphicon-remove-sign pull-right mainModal_close" ng-click="$ctrl.closeModal()" aria-hidden="true"></span>
-	    		</div>
-	    		<video controls class="mainModal_img">
-		    		  <source ng-src="{{$ctrl.datas[$ctrl.currentDemoIndex]}}">
-		    		  Your browser does not have support for this video.
-	    		</video>
-	    	</div>
     	</div>
     </script>
 
