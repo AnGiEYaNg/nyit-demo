@@ -85,6 +85,9 @@ h3 {
 	cursor: pointer;
 	text-decoration: underline;
 }
+.nav_link_active {
+	color: #F69F00;
+}
 .masters_action {
 	width: 280px;
 	text-align: center;
@@ -104,10 +107,8 @@ h3 {
 	margin: 100px 0 44px 0;
 }
 .credits_return {
-	text-decoration: underline;
 	font-size: 12px;
 	margin-bottom: 123px;
-	cursor: pointer;
 }
 .credits_title {
 	font-size: 25px;

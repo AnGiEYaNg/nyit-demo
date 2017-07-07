@@ -147,6 +147,7 @@ angular.module('main', ['ui.router', 'ngAnimate', 'ncy-angular-breadcrumb'])
 	}
 })
 .controller('mainCtrl', function($anchorScroll, $scope, $timeout, assetsFactory, $stateParams){
+	$scope.stateParams = $stateParams;
 	$scope.srcPrefix = 'src/';
 	$scope.libPrefix = 'lib/';
 	$scope.assetsPrefix = 'assets/';
@@ -171,15 +172,15 @@ angular.module('main', ['ui.router', 'ngAnimate', 'ncy-angular-breadcrumb'])
 		}
 	}
 
-	$scope.credits = assetsFactory.credits;
 	$scope.subSectionMap=assetsFactory.subSectionMap;
+
+	$scope.credits = assetsFactory.credits;
 	$scope.subSectionImg={
 		animation: 'assets/MFA - Animation/Concept Art/Copy of MILKYWAY06.jpg',
 		art_and_technology: 'assets/MFA - Art & Technology/Copy of 3d print.jpg',
 		graphic_design: "assets/MFA - Graphic Design/Copy of jingzou COLLINS.jpg"
 	};
 	$scope.bachelors_of_fine_art = assetsFactory.bachelors_of_fine_art;
-	$scope.stateParams = $stateParams;
 	$scope.currentSection = $stateParams.subsection;
 	$scope.subsectionData = assetsFactory[$scope.currentSection];
 	$timeout(function(){

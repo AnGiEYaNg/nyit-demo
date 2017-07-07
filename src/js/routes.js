@@ -11,16 +11,27 @@ angular.module('main')
 		}
 	})
 	.state({
-		name: 'section',
+		name: 'credits',
+		url: '/credits',
+		templateUrl: 'credits.html',
+		controller: 'mainCtrl'
+	})
+	.state({
+		name: 'content',
+		templateUrl: 'breadcrumb.html',
+		controller: 'mainCtrl'
+	})
+	.state({
+		name: 'content.section',
 		url: '/:section',
-		templateUrl: 'mastersLanding.html',
+		templateUrl: 'section.html',
 		controller: 'mainCtrl',
 		ncyBreadcrumb: {
 			label: '{{section[stateParams.section].title}}'
 		}
 	})
 	.state({
-		name: 'section.subsection',
+		name: 'content.section.subsection',
 		url: '/:subsection',
 		templateUrl: 'subsection.html',
 		controller: 'mainCtrl',
@@ -29,15 +40,9 @@ angular.module('main')
 		}
 	})
 	.state({
-		name: 'section.subsection.type',
+		name: 'content.section.subsection.type',
 		url: '/:type',
 		templateUrl: 'subsection.html',
-		controller: 'mainCtrl'
-	})
-	.state({
-		name: 'credits',
-		url: '/credits',
-		templateUrl: 'credits.html',
 		controller: 'mainCtrl'
 	})
 })
