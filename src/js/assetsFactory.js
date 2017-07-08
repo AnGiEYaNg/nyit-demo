@@ -286,39 +286,243 @@ angular.module('main')
 		],
 
 		MFA_animation_animation : [
+			{
+				thumbnail: 'NYIT-MFA-Animation-Video1.png',
+				full: 'NYIT-MFA-Animation-Video1.mp4'
+			},
+			{
+				thumbnail: 'NYIT-MFA-Animation-Video2.png',
+				full: 'NYIT-MFA-Animation-Video2.mp4'
+			},
+			{
+				thumbnail: 'NYIT-MFA-Animation-Video3.png',
+				full: 'NYIT-MFA-Animation-Video3.mp4'
+			},
+			{
+				thumbnail: 'NYIT-MFA-Animation-Video4.png',
+				full: 'NYIT-MFA-Animation-Video4.mp4'
+			},
+			{
+				thumbnail: 'NYIT-MFA-Animation-Video5.png',
+				full: 'NYIT-MFA-Animation-Video5.mp4'
+			},
+			{
+				thumbnail: 'NYIT-MFA-Animation-Video6.png',
+				full: 'NYIT-MFA-Animation-Video6.mp4'
+			},
+			{
+				thumbnail: 'NYIT-MFA-Animation-Video7.png',
+				full: 'NYIT-MFA-Animation-Video7.mp4'
+			},
+			{
+				thumbnail: 'NYIT-MFA-Animation-Video8.png',
+				full: 'NYIT-MFA-Animation-Video8.mp4'
+			},
+			{
+				thumbnail: 'NYIT-MFA-Animation-Video9.png',
+				full: 'NYIT-MFA-Animation-Video9.mp4'
+			}
 		],
 		MFA_animation_concept_art : [
+			{
+				thumbnail: 'ACF-MFA-Image1-sm.png',
+				full: 'ACF-MFA-Image1.jpg'
+			},
+			{
+				thumbnail: 'ACF-MFA-Image2-sm.png',
+				full: 'ACF-MFA-Image2.jpg'
+			},
+			{
+				thumbnail: 'ACF-MFA-Image3-sm.png',
+				full: 'ACF-MFA-Image3.jpg'
+			},
+			{
+				thumbnail: 'ACF-MFA-Image4-sm.png',
+				full: 'ACF-MFA-Image4.jpg'
+			},
+			{
+				thumbnail: 'ACF-MFA-Image5-sm.png',
+				full: 'ACF-MFA-Image5.jpg'
+			},
+			{
+				thumbnail: 'ACF-MFA-Image6-sm.png',
+				full: 'ACF-MFA-Image6.jpg'
+			},
+			{
+				thumbnail: 'ACF-MFA-Image7-sm.png',
+				full: 'ACF-MFA-Image7.jpg'
+			},
+			{
+				thumbnail: 'ACF-MFA-Image8-sm.png',
+				full: 'ACF-MFA-Image8.jpg'
+			},
+			{
+				thumbnail: 'ACF-MFA-Image9-sm.png',
+				full: 'ACF-MFA-Image9.jpg'
+			},
+			{
+				thumbnail: 'ACF-MFA-Image10-sm.png',
+				full: 'ACF-MFA-Image10.jpg'
+			},
+			{
+				thumbnail: 'ACF-MFA-Image11-sm.png',
+				full: 'ACF-MFA-Image11.jpg'
+			},
+			{
+				thumbnail: 'ACF-MFA-Image12-sm.png',
+				full: 'ACF-MFA-Image12.jpg'
+			},
+			{
+				thumbnail: 'ACF-MFA-Image13-sm.png',
+				full: 'ACF-MFA-Image13.jpg'
+			},
+			{
+				thumbnail: 'ACF-MFA-Image14-sm.png',
+				full: 'ACF-MFA-Image14.jpg'
+			},
+			{
+				thumbnail: 'ACF-MFA-Image15-sm.png',
+				full: 'ACF-MFA-Image15.jpg'
+			},
+			{
+				thumbnail: 'ACF-MFA-Image16-sm.png',
+				full: 'ACF-MFA-Image16.png'
+			},
+			{
+				thumbnail: 'ACF-MFA-Image17-sm.png',
+				full: 'ACF-MFA-Image17.jpg'
+			},
+			{
+				thumbnail: 'ACF-MFA-Image18-sm.png',
+				full: 'ACF-MFA-Image18.jpg'
+			},
+			{
+				thumbnail: 'ACF-MFA-Image19-sm.png',
+				full: 'ACF-MFA-Image19.jpg'
+			},
+			{
+				thumbnail: 'ACF-MFA-Image20-sm.png',
+				full: 'ACF-MFA-Image20.jpg'
+			},
+			{
+				thumbnail: 'ACF-MFA-Image21-sm.png',
+				full: 'ACF-MFA-Image21.jpg'
+			},
+			{
+				thumbnail: 'ACF-MFA-Image22-sm.png',
+				full: 'ACF-MFA-Image22.jpg'
+			},
+			{
+				thumbnail: 'ACF-MFA-Image23-sm.png',
+				full: 'ACF-MFA-Image23.jpg'
+			},
+			{
+				thumbnail: 'ACF-MFA-Image24-sm.png',
+				full: 'ACF-MFA-Image24.jpg'
+			}, 
+			{
+				thumbnail: 'ACF-MFA-Image25-sm.png',
+				full: ['ACF-MFA-Image25-1.jpg', 'ACF-MFA-Image25-2.jpg', 'ACF-MFA-Image25-3.jpg', 'ACF-MFA-Image25-4.jpg', 'ACF-MFA-Image25-5.jpg', 'ACF-MFA-Image25-6.jpg', 'ACF-MFA-Image25-7.jpg', 'ACF-MFA-Image25-8.jpg', 'ACF-MFA-Image25-9.jpg', 'ACF-MFA-Image25-10.jpg', 'ACF-MFA-Image25-11.jpg', 'ACF-MFA-Image25-12.JPG', 'ACF-MFA-Image25-13.jpg', 'ACF-MFA-Image25-14.jpg', 'ACF-MFA-Image25-15.jpg']
+			},
+			{
+				thumbnail: 'ACF-MFA-Image26-sm.png',
+				full: 'ACF-MFA-Image26.jpg'
+			}
 		],
 		MFA_art_and_technology_art_and_technology : [
+			{
+				thumbnail: 'AT-MFA-Image1-sm.png',
+				full: 'AT-MFA-Image1.jpg'
+			},
+			{
+				thumbnail: 'AT-MFA-Image2-sm.png',
+				full: ['AT-MFA-Image2-1.jpg', 'AT-MFA-Image2-2.jpg']
+			},
+			{
+				thumbnail: 'AT-MFA-Image3-sm.png',
+				full: ['AT-MFA-Image3-1.png', 'AT-MFA-Image3-2.png']
+			},
+			{
+				thumbnail: 'AT-MFA-Image4-sm.png',
+				full: ['AT-MFA-Image4-1.jpg', 'AT-MFA-Image4-2.jpg', 'AT-MFA-Image4-3.jpg']
+			}
 		],
 		MFA_art_and_technology_animation : [
+			{
+				thumbnail: 'NYIT-MFA-Art_N_Tech-Video1.png',
+				full: 'NYIT-MFA-Art_N_Tech-Video1.mp4'
+			}
 		],
 		MFA_graphic_design_graphic_design : [
+			{
+				thumbnail: 'GD-MFA-Image-1-sm.png',
+				full: 'GD-MFA-Image1.jpg'
+			},
+			{
+				thumbnail: 'GD-MFA-Image2-sm.png',
+				full: 'GD-MFA-Image2.jpg'
+			},
+			{
+				thumbnail: 'GD-MFA-Image3-sm.png',
+				full: 'GD-MFA-Image3.jpg'
+			},
+			{
+				thumbnail: 'GD-MFA-Image4-sm.png',
+				full: 'GD-MFA-Image4.jpg'
+			}, 
+			{
+				thumbnail: 'GD-MFA-Image5-sm.png',
+				full: ['GD-MFA-Image5-1.jpg', 'GD-MFA-Image5-2.jpg', 'GD-MFA-Image5-3.jpg', 'GD-MFA-Image5-4.jpg']
+			},
+			{
+				thumbnail: 'GD-MFA-Image6-sm.png',
+				full: 'GD-MFA-Image6.png'
+			}, 
+			{
+				thumbnail: 'GD-MFA-Image7-sm.png',
+				full: ['GD-MFA-Image7-1.jpg', 'GD-MFA-Image7-2.jpg', 'GD-MFA-Image7-3.jpg']
+			}, 
+			{
+				thumbnail: 'GD-MFA-Image8-sm.png',
+				full: ['GD-MFA-Image8-1.jpg', 'GD-MFA-Image8-2.jpg', 'GD-MFA-Image8-3.jpg']
+			}, 
+			{
+				thumbnail: 'GD-MFA-Image9-sm.png',
+				full: ['GD-MFA-Image9-1.jpg', 'GD-MFA-Image9-2.jpg']
+			}
 		],
 		MFA_graphic_design_animation : [
+			{
+				thumbnail: 'NYIT-MFA-GraphicDesign-Video1.png',
+				full: 'NYIT-MFA-GraphicDesign-Video1.mp4'
+			},
+			{
+				thumbnail: 'NYIT-MFA-GraphicDesign-Video2.png',
+				full: 'NYIT-MFA-GraphicDesign-Video2.mp4'
+			}
 		],
 		credits : [
 			'Helen Bayona',
-			'Angel Chen',
-			'Jin Du',
-			'Maria L. Fazio',
-			'Cong Ge',
-			'Narin Gulec',
-			'Jiaying He',
-			'Theerawat (Tk) Khajornkhanphet',
-			'Victoria Lasisi',
-			'Nan Li',
-			'Shuo (Sure) Li',
 			'Liwen Liu',
+			'Angel Chen',
 			'Nina Mirhabibi',
+			'Jin Du',
 			'Jiayue Qi',
+			'Maria L. Fazio',
 			'Aisha Quershi',
+			'Cong Ge',
 			'Yu-Ta Shih',
+			'Narin Gulec',
 			'Jia Wang',
+			'Jiaying He',
 			'Yuechao Xiong',
+			'Theerawat (Tk) Khajornkhanphet',
 			'Dian (Sophia) Yang',
+			'Victoria Lasisi',
 			'Liuyi Yang',
+			'Nan Li',
 			'Xiaofei Zhang',
+			'Shuo (Sure) Li',
 			'Jing Zou'
 		],
 		sectionMap: {

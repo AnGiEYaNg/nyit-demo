@@ -1,7 +1,8 @@
 angular.module('main')
 .config(function($breadcrumbProvider, $stateProvider){
 	$breadcrumbProvider.setOptions({
-      prefixStateName: 'home'
+      prefixStateName: 'home',
+      templateUrl: 'breadcrumb.html'
     });
 
 	$stateProvider
@@ -56,15 +57,5 @@ angular.module('main')
 		ncyBreadcrumb: {
 			label: '{{subsectionMap[stateParams.subsection]}}'
 		}
-	})
-	.state({
-		name: 'section.subsection.type',
-		url: '/:type',
-		views: {
-			'main@':{
-				templateUrl: 'subsection.html',
-				controller: 'mainCtrl'
-			}
-		},
 	})
 })

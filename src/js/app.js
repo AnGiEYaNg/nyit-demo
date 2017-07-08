@@ -1,45 +1,58 @@
 angular.module('main', ['ui.router', 'ngAnimate', 'ncy-angular-breadcrumb'])
-.controller('mainCtrl', function($anchorScroll, $rootScope, $scope, $timeout, assetsFactory, $state, $stateParams){
-	$timeout(function(){
+.controller('mainCtrl', function($anchorScroll, $scope, $timeout, assetsFactory, $state, $stateParams){
+	$scope.scrollTop = function(){
 		$anchorScroll();
+	}
+	$timeout(function(){
+		$scope.scrollTop();
 	});
+	if($stateParams.subsection){
+		$(window).scroll(function (event) {
+		    var scroll = $(window).scrollTop();
+		    var oldState = $scope.showUpArrow;
+		        if(scroll >150){
+		            $scope.showUpArrow = true;
+		        }else{
+		            $scope.showUpArrow = false;
+		        }
+		        if($scope.showUpArrow !== oldState) {
+		            $scope.$apply();
+		        }
+	    });
+	}
+	$scope.state = $state;
 	$scope.stateParams = $stateParams;
-	$scope.currentState = $state.current;
 	$scope.sectionMap = assetsFactory.sectionMap;
 	$scope.subsectionMap = assetsFactory.subsectionMap;
 
 	$scope.srcPrefix = 'src/';
 	$scope.libPrefix = 'lib/';
-	$rootScope.assetsPrefix = 'assets/';
-	$scope.assetsPrefix = $rootScope.assetsPrefix;
+	$scope.assetsPrefix = 'assets/';
 	$scope.sectionPrefix = $scope.assetsPrefix + $stateParams.section+'/';
 	$scope.subsectionPrefix = $scope.sectionPrefix + $scope.subsectionMap[$stateParams.subsection]+'/';
 	$scope.credits = assetsFactory.credits;
 
-	$scope.assetsDataMap = {
-		BFA: {
-			animation: assetsFactory.BFA_animation,
-			art_and_technology: assetsFactory.BFA_art_and_technology,
-			graphic_design: assetsFactory.BFA_graphic_design
-		},
-		MFA: {
-			animation: {
-				animation: assetsFactory.MFA_animation_animation,
-				concept_art: assetsFactory.MFA_animation_concept_art
-			},
-			art_and_technology: {
-				art_and_technology: assetsFactory.MFA_art_and_technology_art_and_technology,
-				animation: assetsFactory.MFA_art_and_technology_animation
-			},
-			graphic_design: {
-				graphic_design: assetsFactory.MFA_graphic_design_graphic_design,
-				animation: assetsFactory.MFA_graphic_design_animation
-			}
-		}
+	$scope.MFADataMap = {
+		animation: Object.keys($scope.sectionMap.MFA.subTypes.animation),
+		art_and_technology: Object.keys($scope.sectionMap.MFA.subTypes.art_and_technology),
+		graphic_design: Object.keys($scope.sectionMap.MFA.subTypes.graphic_design)
 	}
 
-	$scope.assetsData = assetsFactory[$stateParams.section+'_'+$stateParams.subsection];
-	console.log('assetsData', $scope.assetsData, $stateParams.section+'_'+$stateParams.subsection);
+
+	$scope.setDataDetail = function(subtype){
+		var assetsDataParse = $stateParams.section+'_'+$stateParams.subsection;
+		$scope.currentSubType = null
+		$scope.assetsData = assetsFactory[assetsDataParse];
+		$scope.finalPrefix = $scope.subsectionPrefix;
+		if($stateParams.section === 'MFA' && $stateParams.subsection){
+			$scope.currentSubType = subtype?subtype:$scope.MFADataMap[$stateParams.subsection][0];
+			$scope.assetsData = assetsFactory[assetsDataParse+'_'+$scope.currentSubType];
+			$scope.finalPrefix += $scope.sectionMap.MFA.subTypes[$stateParams.subsection][$scope.currentSubType] +'/';
+		}
+		return $scope.finalPrefix;
+	}
+
+	$scope.setDataDetail();
 
 	$scope.showModal = false;
 	$scope.currentDemoData = null;
@@ -57,17 +70,11 @@ angular.module('main', ['ui.router', 'ngAnimate', 'ncy-angular-breadcrumb'])
 	}
 
 })
-// .component('videoDemo', {
-// 	templateUrl: 'video_demo.html',
-// 	bindings: {
-// 		datas: '='
-// 	},
-// 	controller: 'modalCtrl'
-// })
 .component('lightbox', {
 	templateUrl: 'lightbox.html',
 	bindings: {
-		innerDatas: '='
+		innerDatas: '<',
+		finalPrefix: '<',
 	},
 	controller: function($animate, $scope, $timeout){
 		var self = this;
@@ -82,8 +89,6 @@ angular.module('main', ['ui.router', 'ngAnimate', 'ncy-angular-breadcrumb'])
 			else return self.currentInnerIndex++;
 		}
 		$scope.$watch('$ctrl.currentInnerIndex', function(){
-			// var element = angular.element('.lightbox_img')[0];
-			// console.log('element', element);
 			self.animateFade = true;
 			$timeout(function(){
 				self.animateFade = false;
