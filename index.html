@@ -70,8 +70,9 @@
     	
        <div class="row landingTitle_block">
             <div class="landingTitle_content">
-                <h3>{{sectionMap[stateParams.section].h3}}</h3>
-                <h5>{{sectionMap[stateParams.section].h5}}</h5>
+                <div class="landingTitle_title">{{sectionMap[stateParams.section].h3}}</div>
+                <br />
+                <div class="landingTitle_subTitle">{{sectionMap[stateParams.section].h5}}</div>
             </div>
         </div>
     	<div class="row">
@@ -131,7 +132,7 @@
 	    		<img ng-if="!$ctrl.animateFade" ng-src="{{$ctrl.finalPrefix + $ctrl.innerDatas[$ctrl.currentInnerIndex]}}" class="lightbox_img"/>
 			</div>
     		<div>
-    			<h3><i>{{$ctrl.currentInnerIndex+1}} of {{$ctrl.innerDatas.length}}</i></h3>
+    			<div class="lightbox_count"><i>{{$ctrl.currentInnerIndex+1}} of {{$ctrl.innerDatas.length}}</i></div>
     		</div>
 		</div>
     </script>

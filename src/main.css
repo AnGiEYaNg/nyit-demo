@@ -79,12 +79,12 @@ body {
 	padding: 0;
 }
 
-h3 {
+.landingTitle_title {
 	font-size: 20px;
 }
 
-h5 {
-	font-weight: 16px;
+.landingTitle_subTitle {
+	font-size: 16px;
 	font-family: "Helvetica Neue";
 }
 
@@ -289,6 +289,9 @@ h5 {
 	width: 20%;
 	height: 100%;
 	cursor: pointer;
+}
+.lightbox_count {
+	font-size: 20px;
 }
 .closeIcon {
 	width: 20px;
