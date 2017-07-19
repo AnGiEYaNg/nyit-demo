@@ -15,7 +15,7 @@
 			<div class="col-sm-4 col-xs-12 pull-right logo-desc-block">
 				<div>
 					<span><b>Visit us at </b></span>
-					<a class="logo-link" href="http://nyit.edu/programs/digital_art_design">nyit.edu/programs/digital_art_design</a>
+					<a class="logo-link" href="http://nyit.edu/programs/digital_art_design">nyit.edu/digitalartdesign</a>
 				</div>
 			</div>
 		</section>
@@ -76,29 +76,41 @@
             </div>
         </div>
     	<div class="row">
-    		<div ng-repeat="(state, name) in subsectionMap" class="col-md-4 col-sm-6 col-xs-12 masters_action" ui-sref="section.subsection({section: stateParams.section, subsection: state})">
-    			<img ng-src="{{sectionPrefix+sectionMap[stateParams.section][state]}}" class="masters_img" />
-    			<div class="masters_actionTitle">{{name}}</div>
+    		<div ng-repeat="(state, prop) in sectionMap[stateParams.section].subsection" class="col-md-4 col-sm-6 col-xs-12 masters_action" ui-sref="section.subsection({section: stateParams.section, subsection: state})">
+    			<img ng-src="{{sectionPrefix+prop.landing}}" class="masters_img" />
+    			<div class="masters_actionTitle">{{prop.title}}</div>
     		</div>
     	</div>
     	<div  ui-sref="credits" class="nav_link pull-right credits_footer" ng-if="stateParams.section === 'MFA'">Credits</div>
     </script>
 
     <script type="text/ng-template" id="subsection.html">
-        <div ng-if="stateParams.section === 'MFA'" class="subsection_subtypeContainer">
-            <span ng-repeat="type in MFADataMap[stateParams.subsection] track by $index" >
-                <span class="subsection_subtype" ng-class="{'nav_link_active':currentSubType===type}" ng-click="setDataDetail(type)">{{sectionMap.MFA.subTypes[stateParams.subsection][type]}}</span>
+        <div ng-if="currentSubType" class="subsection_subtypeContainer">
+            <span ng-repeat="(type, name) in sectionMap[stateParams.section].subsection[stateParams.subsection].subTypes track by $index" >
+                <span class="subsection_subtype" ng-class="{'nav_link_active':currentSubType===type}" ng-click="setDataDetail(type)">{{name}}</span>
                 <span ng-if="!$last">  |  </span>
             </span>
         </div>
         <img class="subsection_topArrow" ng-src="{{assetsPrefix}}Back-to-Top-arrow.png" ng-if="showUpArrow" ng-click="scrollTop()">
     	<div class="clearfix">
 			<img 
-			ng-repeat="img in assetsData track by $index" 
+			ng-repeat="img in assetsData[currentSubType?currentSubType:stateParams.subsection] track by $index" 
 			ng-src="{{finalPrefix+img.thumbnail}}" 
 			class="demo_img" 
 			ng-click="openModal(img.full)"/>
     	</div>
+        <div ng-if="assetsData.animation && !currentSubType">
+            <div class="subsection_animationTitle">
+                Animations
+            </div>
+            <div class="clearfix">
+                <img 
+                ng-repeat="img in assetsData.animation track by $index" 
+                ng-src="{{finalPrefix+img.thumbnail}}" 
+                class="demo_img" 
+                ng-click="openModal(img.full)"/>
+            </div>
+        </div>
     	<div class="mainModal" ng-if="showModal">
 		    <div class="mainModal_content text-center">
 		    	<!-- <div class="pull-right closeIcon clearfix">x</div> -->

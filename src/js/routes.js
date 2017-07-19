@@ -55,7 +55,7 @@ angular.module('main')
 			}
 		},
 		ncyBreadcrumb: {
-			label: '{{subsectionMap[stateParams.subsection]}}'
+			label: '{{sectionMap[stateParams.section].subsection[stateParams.subsection].title}}'
 		}
 	})
 })

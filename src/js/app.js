@@ -23,32 +23,39 @@ angular.module('main', ['ui.router', 'ngAnimate', 'ncy-angular-breadcrumb'])
 	$scope.state = $state;
 	$scope.stateParams = $stateParams;
 	$scope.sectionMap = assetsFactory.sectionMap;
-	$scope.subsectionMap = assetsFactory.subsectionMap;
+	// $scope.subsectionMap = assetsFactory.subsectionMap;
 
 	$scope.srcPrefix = 'src/';
 	$scope.libPrefix = 'lib/';
 	$scope.assetsPrefix = 'assets/';
 	$scope.sectionPrefix = $scope.assetsPrefix + $stateParams.section+'/';
-	$scope.subsectionPrefix = $scope.sectionPrefix + $scope.subsectionMap[$stateParams.subsection]+'/';
+	// $scope.subsectionPrefix = $scope.sectionPrefix + $scope.subsectionMap[$stateParams.subsection]+'/';
 	$scope.credits = assetsFactory.credits;
 
-	$scope.MFADataMap = {
-		animation: Object.keys($scope.sectionMap.MFA.subTypes.animation),
-		art_and_technology: Object.keys($scope.sectionMap.MFA.subTypes.art_and_technology),
-		graphic_design: Object.keys($scope.sectionMap.MFA.subTypes.graphic_design)
-	}
+	// $scope.MFADataMap = {
+	// 	animation: Object.keys($scope.sectionMap.MFA.subTypes.animation),
+	// 	art_and_technology: Object.keys($scope.sectionMap.MFA.subTypes.art_and_technology),
+	// 	graphic_design: Object.keys($scope.sectionMap.MFA.subTypes.graphic_design)
+	// }
 
 
 	$scope.setDataDetail = function(subtype){
 		var assetsDataParse = $stateParams.section+'_'+$stateParams.subsection;
 		$scope.currentSubType = null
 		$scope.assetsData = assetsFactory[assetsDataParse];
-		$scope.finalPrefix = $scope.subsectionPrefix;
-		if($stateParams.section === 'MFA' && $stateParams.subsection){
-			$scope.currentSubType = subtype?subtype:$scope.MFADataMap[$stateParams.subsection][0];
-			$scope.assetsData = assetsFactory[assetsDataParse+'_'+$scope.currentSubType];
-			$scope.finalPrefix += $scope.sectionMap.MFA.subTypes[$stateParams.subsection][$scope.currentSubType] +'/';
+		$scope.finalPrefix = $scope.sectionPrefix;
+		if($stateParams.subsection){
+			$scope.finalPrefix += $scope.sectionMap[$stateParams.section].subsection[$stateParams.subsection].title + '/';
 		}
+		if($stateParams.section === 'MFA' && $stateParams.subsection === 'animation'){
+			var defaultSubType = Object.keys($scope.sectionMap[$stateParams.section].subsection[$stateParams.subsection].subTypes);
+			$scope.currentSubType = subtype?subtype:defaultSubType[0];
+			$scope.assetsData = assetsFactory[assetsDataParse+'_'+$scope.currentSubType];
+			$scope.finalPrefix += $scope.sectionMap.MFA.subsection[$stateParams.subsection].subTypes[$scope.currentSubType] +'/';
+		}
+		// console.log('data', $scope.assetsData);
+		// console.log('currentSubType', $scope.currentSubType);
+		// console.log('prefix', $scope.finalPrefix);
 		return $scope.finalPrefix;
 	}
 
