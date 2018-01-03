@@ -332,63 +332,63 @@ angular.module('main')
 			concept_art: [
 				{
 					thumbnail: 'ACF-MFA-Image1-sm.png',
-					full: 'ACF-MFA-Image1.jpg'
+					full: 'ACF-MFA-Image1.png'
 				},
 				{
 					thumbnail: 'ACF-MFA-Image2-sm.png',
-					full: 'ACF-MFA-Image2.jpg'
+					full: 'ACF-MFA-Image2.png'
 				},
 				{
 					thumbnail: 'ACF-MFA-Image3-sm.png',
-					full: 'ACF-MFA-Image3.jpg'
+					full: 'ACF-MFA-Image3.png'
 				},
 				{
 					thumbnail: 'ACF-MFA-Image4-sm.png',
-					full: 'ACF-MFA-Image4.jpg'
+					full: 'ACF-MFA-Image4.png'
 				},
 				{
 					thumbnail: 'ACF-MFA-Image5-sm.png',
-					full: 'ACF-MFA-Image5.jpg'
+					full: 'ACF-MFA-Image5.png'
 				},
 				{
 					thumbnail: 'ACF-MFA-Image6-sm.png',
-					full: 'ACF-MFA-Image6.jpg'
+					full: 'ACF-MFA-Image6.png'
 				},
 				{
 					thumbnail: 'ACF-MFA-Image7-sm.png',
-					full: 'ACF-MFA-Image7.jpg'
+					full: 'ACF-MFA-Image7.png'
 				},
 				{
 					thumbnail: 'ACF-MFA-Image8-sm.png',
-					full: 'ACF-MFA-Image8.jpg'
+					full: 'ACF-MFA-Image8.png'
 				},
 				{
 					thumbnail: 'ACF-MFA-Image9-sm.png',
-					full: 'ACF-MFA-Image9.jpg'
+					full: 'ACF-MFA-Image9.png'
 				},
 				{
 					thumbnail: 'ACF-MFA-Image10-sm.png',
-					full: 'ACF-MFA-Image10.jpg'
+					full: 'ACF-MFA-Image10.png'
 				},
 				{
 					thumbnail: 'ACF-MFA-Image11-sm.png',
-					full: 'ACF-MFA-Image11.jpg'
+					full: 'ACF-MFA-Image11.png'
 				},
 				{
 					thumbnail: 'ACF-MFA-Image12-sm.png',
-					full: 'ACF-MFA-Image12.jpg'
+					full: 'ACF-MFA-Image12.png'
 				},
 				{
 					thumbnail: 'ACF-MFA-Image13-sm.png',
-					full: 'ACF-MFA-Image13.jpg'
+					full: 'ACF-MFA-Image13.png'
 				},
 				{
 					thumbnail: 'ACF-MFA-Image14-sm.png',
-					full: 'ACF-MFA-Image14.jpg'
+					full: 'ACF-MFA-Image14.png'
 				},
 				{
 					thumbnail: 'ACF-MFA-Image15-sm.png',
-					full: 'ACF-MFA-Image15.jpg'
+					full: 'ACF-MFA-Image15.png'
 				},
 				{
 					thumbnail: 'ACF-MFA-Image16-sm.png',
@@ -396,43 +396,43 @@ angular.module('main')
 				},
 				{
 					thumbnail: 'ACF-MFA-Image17-sm.png',
-					full: 'ACF-MFA-Image17.jpg'
+					full: 'ACF-MFA-Image17.png'
 				},
 				{
 					thumbnail: 'ACF-MFA-Image18-sm.png',
-					full: 'ACF-MFA-Image18.jpg'
+					full: 'ACF-MFA-Image18.png'
 				},
 				{
 					thumbnail: 'ACF-MFA-Image19-sm.png',
-					full: 'ACF-MFA-Image19.jpg'
+					full: 'ACF-MFA-Image19.png'
 				},
 				{
 					thumbnail: 'ACF-MFA-Image20-sm.png',
-					full: 'ACF-MFA-Image20.jpg'
+					full: 'ACF-MFA-Image20.png'
 				},
 				{
 					thumbnail: 'ACF-MFA-Image21-sm.png',
-					full: 'ACF-MFA-Image21.jpg'
+					full: 'ACF-MFA-Image21.png'
 				},
 				{
 					thumbnail: 'ACF-MFA-Image22-sm.png',
-					full: 'ACF-MFA-Image22.jpg'
+					full: 'ACF-MFA-Image22.png'
 				},
 				{
 					thumbnail: 'ACF-MFA-Image23-sm.png',
-					full: 'ACF-MFA-Image23.jpg'
+					full: 'ACF-MFA-Image23.png'
 				},
 				{
 					thumbnail: 'ACF-MFA-Image24-sm.png',
-					full: 'ACF-MFA-Image24.jpg'
+					full: 'ACF-MFA-Image24.png'
 				}, 
 				{
 					thumbnail: 'ACF-MFA-Image25-sm.png',
-					full: ['ACF-MFA-Image25-1.jpg', 'ACF-MFA-Image25-2.jpg', 'ACF-MFA-Image25-3.jpg', 'ACF-MFA-Image25-4.jpg', 'ACF-MFA-Image25-5.jpg', 'ACF-MFA-Image25-6.jpg', 'ACF-MFA-Image25-7.jpg', 'ACF-MFA-Image25-8.jpg', 'ACF-MFA-Image25-9.jpg', 'ACF-MFA-Image25-10.jpg', 'ACF-MFA-Image25-11.jpg', 'ACF-MFA-Image25-12.JPG', 'ACF-MFA-Image25-13.jpg', 'ACF-MFA-Image25-14.jpg', 'ACF-MFA-Image25-15.jpg']
+					full: ['ACF-MFA-Image25-1.png', 'ACF-MFA-Image25-2.png', 'ACF-MFA-Image25-3.png', 'ACF-MFA-Image25-4.png', 'ACF-MFA-Image25-5.png', 'ACF-MFA-Image25-6.png', 'ACF-MFA-Image25-7.png', 'ACF-MFA-Image25-8.png', 'ACF-MFA-Image25-9.png', 'ACF-MFA-Image25-10.png', 'ACF-MFA-Image25-11.png', 'ACF-MFA-Image25-12.png', 'ACF-MFA-Image25-13.png', 'ACF-MFA-Image25-14.png', 'ACF-MFA-Image25-15.png']
 				},
 				{
 					thumbnail: 'ACF-MFA-Image26-sm.png',
-					full: 'ACF-MFA-Image26.jpg'
+					full: 'ACF-MFA-Image26.png'
 				}
 			]
 		},
@@ -440,11 +440,11 @@ angular.module('main')
 			art_and_technology:[
 				{
 					thumbnail: 'AT-MFA-Image1-sm.png',
-					full: 'AT-MFA-Image1.jpg'
+					full: 'AT-MFA-Image1.png'
 				},
 				{
 					thumbnail: 'AT-MFA-Image2-sm.png',
-					full: ['AT-MFA-Image2-1.jpg', 'AT-MFA-Image2-2.jpg']
+					full: ['AT-MFA-Image2-1.png', 'AT-MFA-Image2-2.png']
 				},
 				{
 					thumbnail: 'AT-MFA-Image3-sm.png',
@@ -452,7 +452,7 @@ angular.module('main')
 				},
 				{
 					thumbnail: 'AT-MFA-Image4-sm.png',
-					full: ['AT-MFA-Image4-1.jpg', 'AT-MFA-Image4-2.jpg', 'AT-MFA-Image4-3.jpg']
+					full: ['AT-MFA-Image4-1.png', 'AT-MFA-Image4-2.png', 'AT-MFA-Image4-3.png']
 				}
 			],
 			animation: [
@@ -466,23 +466,23 @@ angular.module('main')
 			graphic_design: [
 				{
 					thumbnail: 'GD-MFA-Image-1-sm.png',
-					full: 'GD-MFA-Image1.jpg'
+					full: 'GD-MFA-Image1.png'
 				},
 				{
 					thumbnail: 'GD-MFA-Image2-sm.png',
-					full: 'GD-MFA-Image2.jpg'
+					full: 'GD-MFA-Image2.png'
 				},
 				{
 					thumbnail: 'GD-MFA-Image3-sm.png',
-					full: 'GD-MFA-Image3.jpg'
+					full: 'GD-MFA-Image3.png'
 				},
 				{
 					thumbnail: 'GD-MFA-Image4-sm.png',
-					full: 'GD-MFA-Image4.jpg'
+					full: 'GD-MFA-Image4.png'
 				}, 
 				{
 					thumbnail: 'GD-MFA-Image5-sm.png',
-					full: ['GD-MFA-Image5-1.jpg', 'GD-MFA-Image5-2.jpg', 'GD-MFA-Image5-3.jpg', 'GD-MFA-Image5-4.jpg']
+					full: ['GD-MFA-Image5-1.png', 'GD-MFA-Image5-2.png', 'GD-MFA-Image5-3.png', 'GD-MFA-Image5-4.png']
 				},
 				{
 					thumbnail: 'GD-MFA-Image6-sm.png',
@@ -490,15 +490,15 @@ angular.module('main')
 				}, 
 				{
 					thumbnail: 'GD-MFA-Image7-sm.png',
-					full: ['GD-MFA-Image7-1.jpg', 'GD-MFA-Image7-2.jpg', 'GD-MFA-Image7-3.jpg']
+					full: ['GD-MFA-Image7-1.png', 'GD-MFA-Image7-2.png', 'GD-MFA-Image7-3.png']
 				}, 
 				{
 					thumbnail: 'GD-MFA-Image8-sm.png',
-					full: ['GD-MFA-Image8-1.jpg', 'GD-MFA-Image8-2.jpg', 'GD-MFA-Image8-3.jpg']
+					full: ['GD-MFA-Image8-1.png', 'GD-MFA-Image8-2.png', 'GD-MFA-Image8-3.png']
 				}, 
 				{
 					thumbnail: 'GD-MFA-Image9-sm.png',
-					full: ['GD-MFA-Image9-1.jpg', 'GD-MFA-Image9-2.jpg']
+					full: ['GD-MFA-Image9-1.png', 'GD-MFA-Image9-2.png']
 				}
 			],
 			animation: [
