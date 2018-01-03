@@ -1,14 +1,15 @@
 angular.module('main')
-.config(function($breadcrumbProvider, $stateProvider){
+.config(function($breadcrumbProvider, $stateProvider, $urlRouterProvider){
 	$breadcrumbProvider.setOptions({
       prefixStateName: 'home',
       templateUrl: 'breadcrumb.html'
     });
+	$urlRouterProvider.otherwise("/");
 
 	$stateProvider
 	.state({
 		name: 'home',
-		url: '',
+		url: '/',
 		views: {
 			'main@':{
 				templateUrl: 'homepage.html',
