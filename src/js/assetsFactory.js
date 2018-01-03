@@ -86,8 +86,8 @@ angular.module('main')
 					thumbnail :'GD-BFA-Image3-sm.png',
 					full: [
 						'GD-BFA-Image3-1.png',
-						'GD-BFA-Image3-2.jpg',
-						'GD-BFA-Image3-3.jpg',
+						'GD-BFA-Image3-2.png',
+						'GD-BFA-Image3-3.png',
 						'GD-BFA-Image3-4.png'
 					]
 				},
@@ -95,7 +95,7 @@ angular.module('main')
 					thumbnail :'GD-BFA-Image4-sm.png',
 					full: [
 						'GD-BFA-Image4-1.png',
-						'GD-BFA-Image4-2.jpg'
+						'GD-BFA-Image4-2.png'
 					]
 				},
 				{
@@ -103,23 +103,23 @@ angular.module('main')
 					full: 'GD-BFA-Image5.png'
 				},
 				{
-					thumbnail :'GD-BFA-Image6-sm.jpg',
-					full: 'GD-BFA-Image6.jpg'
+					thumbnail :'GD-BFA-Image6-sm.png',
+					full: 'GD-BFA-Image6.png'
 				},
 				{
-					thumbnail :'GD-BFA-Image7-sm.jpg',
-					full: 'GD-BFA-Image7.jpg'
+					thumbnail :'GD-BFA-Image7-sm.png',
+					full: 'GD-BFA-Image7.png'
 				},
 				{
-					thumbnail :'GD-BFA-Image8-sm.jpg',
+					thumbnail :'GD-BFA-Image8-sm.png',
 					full: [
-						'GD-BFA-Image8-1.jpg',
+						'GD-BFA-Image8-1.png',
 						'GD-BFA-Image8-2.png'
 					]
 				},
 				{
-					thumbnail :'GD-BFA-Image9-sm.jpg',
-					full: 'GD-BFA-Image9.jpg'
+					thumbnail :'GD-BFA-Image9-sm.png',
+					full: 'GD-BFA-Image9.png'
 				},
 				{
 					thumbnail :'GD-BFA-Image10-sm.png',
@@ -133,16 +133,16 @@ angular.module('main')
 					thumbnail :'GD-BFA-Image12-sm.png',
 					full: [
 						'GD-BFA-Image12-1.png',
-						'GD-BFA-Image12-2.jpg'
+						'GD-BFA-Image12-2.png'
 					]
 				},
 				{
-					thumbnail :'GD-BFA-Image13-sm.jpg',
+					thumbnail :'GD-BFA-Image13-sm.png',
 					full: [
-						'GD-BFA-Image13-1.jpg',
-						'GD-BFA-Image13-2.jpg',
-						'GD-BFA-Image13-3.jpg',
-						'GD-BFA-Image13-4.jpg'
+						'GD-BFA-Image13-1.png',
+						'GD-BFA-Image13-2.png',
+						'GD-BFA-Image13-3.png',
+						'GD-BFA-Image13-4.png'
 					]
 				},
 				{
@@ -154,16 +154,16 @@ angular.module('main')
 					full: 'GD-BFA-Image15.png'
 				},
 				{
-					thumbnail :'GD-BFA-Image16-sm.jpg',
-					full: 'GD-BFA-Image16.jpg'
+					thumbnail :'GD-BFA-Image16-sm.png',
+					full: 'GD-BFA-Image16.png'
 				},
 				{
 					thumbnail :'GD-BFA-Image17-sm.png',
 					full: 'GD-BFA-Image17.png'
 				},
 				{
-					thumbnail :'GD-BFA-Image18-sm.jpg',
-					full: 'GD-BFA-Image18.jpg'
+					thumbnail :'GD-BFA-Image18-sm.png',
+					full: 'GD-BFA-Image18.png'
 				},
 				{
 					thumbnail :'GD-BFA-Image19-sm.png',
@@ -234,8 +234,8 @@ angular.module('main')
 					full: 'GD-BFA-Image35.png'
 				},
 				{
-					thumbnail :'GD-BFA-Image36-sm.jpg',
-					full: 'GD-BFA-Image36.jpg'
+					thumbnail :'GD-BFA-Image36-sm.png',
+					full: 'GD-BFA-Image36.png'
 				},
 				{
 					thumbnail :'GD-BFA-Image37-sm.png',
